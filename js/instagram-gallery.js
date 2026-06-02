@@ -1,0 +1,66 @@
+document.addEventListener("DOMContentLoaded", async () => {
+    const galleryContainer = document.getElementById("instagram-gallery-grid");
+    if (!galleryContainer) return;
+
+    try {
+        // Fetch and parse the .env file
+        const envResponse = await fetch(".env");
+        if (!envResponse.ok) {
+            throw new Error("Failed to load .env file");
+        }
+        
+        const envText = await envResponse.text();
+        const ENV = {};
+        
+        envText.split('\n').forEach(line => {
+            const match = line.match(/^([^=]+)=(.*)$/);
+            if (match) {
+                ENV[match[1].trim()] = match[2].trim();
+            }
+        });
+
+        if (!ENV.SUPABASE_URL || !ENV.SUPABASE_ANON_KEY) {
+            throw new Error("Missing Supabase credentials in .env");
+        }
+
+        const response = await fetch(`${ENV.SUPABASE_URL}/rest/v1/synced_media?gallery_publish_status=eq.success&order=instagram_timestamp.desc&limit=8`, {
+            method: "GET",
+            headers: {
+                "apikey": ENV.SUPABASE_ANON_KEY,
+                "Authorization": `Bearer ${ENV.SUPABASE_ANON_KEY}`,
+                "Content-Type": "application/json"
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+
+        if (data.length === 0) {
+            galleryContainer.innerHTML = '<p class="text-center w-100">No recent posts available.</p>';
+            return;
+        }
+
+        let html = "";
+        data.forEach(item => {
+            const mediaUrl = item.gallery_public_url || item.thumbnail_url || item.media_url;
+            const permalink = item.permalink || "https://www.instagram.com/made_products/";
+            
+            html += `
+                <div class="col-xl-3 col-lg-3 col-md-4 col-6 mb-4 text-center">
+                    <a href="${permalink}" target="_blank" rel="noopener noreferrer">
+                        <img class="rounded bg-white img-fluid shadow-sm" style="object-fit: cover; height: 250px; width: 100%;" src="${mediaUrl}" alt="Instagram Post">
+                    </a>
+                </div>
+            `;
+        });
+
+        galleryContainer.innerHTML = html;
+
+    } catch (error) {
+        console.error("Error fetching Instagram gallery:", error);
+        galleryContainer.innerHTML = '<p class="text-center w-100 text-danger">Failed to load gallery.</p>';
+    }
+});
