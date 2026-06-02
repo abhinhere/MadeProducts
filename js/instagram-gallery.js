@@ -3,10 +3,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!galleryContainer) return;
 
     try {
-        // Fetch and parse the .env file
-        const envResponse = await fetch(".env");
+        // Fetch and parse the env.txt file
+        const envResponse = await fetch("env.txt");
         if (!envResponse.ok) {
-            throw new Error("Failed to load .env file");
+            throw new Error("Failed to load env.txt file");
         }
         
         const envText = await envResponse.text();
