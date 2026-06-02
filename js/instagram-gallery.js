@@ -3,37 +3,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!galleryContainer) return;
 
     try {
-        // Fetch and parse the env.txt file
-        const envResponse = await fetch("env.txt");
-        if (!envResponse.ok) {
-            throw new Error("Failed to load env.txt file");
-        }
-        
-        const envText = await envResponse.text();
-        const ENV = {};
-        
-        envText.split('\n').forEach(line => {
-            const match = line.match(/^([^=]+)=(.*)$/);
-            if (match) {
-                ENV[match[1].trim()] = match[2].trim();
-            }
-        });
-
-        if (!ENV.SUPABASE_URL || !ENV.SUPABASE_ANON_KEY) {
-            throw new Error("Missing Supabase credentials in .env");
-        }
-
-        const response = await fetch(`${ENV.SUPABASE_URL}/rest/v1/synced_media?gallery_publish_status=eq.success&order=instagram_timestamp.desc&limit=8`, {
-            method: "GET",
-            headers: {
-                "apikey": ENV.SUPABASE_ANON_KEY,
-                "Authorization": `Bearer ${ENV.SUPABASE_ANON_KEY}`,
-                "Content-Type": "application/json"
-            }
-        });
+        // Fetch the gallery data from the Vercel serverless function
+        const response = await fetch("/api/gallery");
 
         if (!response.ok) {
-            throw new Error(`Failed to fetch: ${response.statusText}`);
+            throw new Error(`Failed to fetch gallery: ${response.statusText}`);
         }
 
         const data = await response.json();
