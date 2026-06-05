@@ -41,14 +41,47 @@
 		}
     });
 
-	// jQuery for page scrolling feature - requires jQuery Easing plugin
+	// Robust smooth scrolling for same-page and cross-page hash anchors
 	$(function() {
 		$(document).on('click', 'a.page-scroll', function(event) {
-			var $anchor = $(this);
-			$('html, body').stop().animate({
-				scrollTop: $($anchor.attr('href')).offset().top
-			}, 600, 'easeInOutExpo');
-			event.preventDefault();
+			var href = $(this).attr('href');
+			if (!href) return;
+
+			var hashIndex = href.indexOf('#');
+			if (hashIndex !== -1) {
+				var hash = href.substring(hashIndex);
+				var target = $(hash);
+				if (target.length) {
+					var pathname = window.location.pathname;
+					var hrefPath = href.substring(0, hashIndex);
+					
+					// Normalize path check (handles empty path, matching path, or root paths)
+					if (hrefPath === '' || pathname.includes(hrefPath) || (pathname.endsWith('/') && (hrefPath === 'index.html' || hrefPath === './'))) {
+						$('html, body').stop().animate({
+							scrollTop: target.offset().top - 80 // Offset for sticky navbar
+						}, 800, 'easeInOutExpo');
+						event.preventDefault();
+					}
+				}
+			}
+		});
+
+		// Trigger smooth scroll on page load if URL contains a hash target
+		$(window).on('load', function() {
+			if (window.location.hash) {
+				var target = $(window.location.hash);
+				if (target.length) {
+					// Instantly reset scroll to top to prevent instant jump before animation
+					$('html, body').scrollTop(0);
+					
+					// Glides smoothly to the target section after preloader hides
+					setTimeout(function() {
+						$('html, body').animate({
+							scrollTop: target.offset().top - 80
+						}, 800, 'easeInOutExpo');
+					}, 200);
+				}
+			}
 		});
 	});
 

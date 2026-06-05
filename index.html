@@ -30,6 +30,54 @@
 	
 	<!-- Favicon  -->
     <link rel="icon" href="images/Favicon.png">
+
+    <!-- Premium UI Enhancement Styles -->
+    <style>
+      .homepage-category-item a {
+        text-decoration: none !important;
+        display: block;
+      }
+      .homepage-category-wrapper {
+        overflow: hidden;
+        border-radius: 8px;
+        border: 1px solid #eaeaea;
+        background-color: #fff;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .homepage-category-wrapper:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12) !important;
+      }
+      .category-gallery-img {
+        transition: transform 0.5s ease;
+        object-fit: cover;
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        display: block;
+      }
+      .homepage-category-img {
+        transition: transform 0.5s ease;
+        object-fit: cover;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 5;
+        display: block;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
+      .homepage-category-wrapper:hover .homepage-category-img {
+        transform: scale(1.06);
+      }
+      .homepage-category-item p {
+        transition: color 0.3s ease;
+        font-weight: 600;
+        color: #bfa46d;
+      }
+      .homepage-category-item:hover p {
+        color: #bfa46d !important;
+      }
+    </style>
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
     
@@ -44,47 +92,8 @@
     <!-- end of preloader -->
     
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-        <div class="container">
-            <!-- Text Logo - Use this if you don't have a graphic logo -->
-            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Sync</a> -->
-
-            <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="index.html"><img src="images/made_products_logo.png" height="5" width="10" alt="alternative"></a> 
-            
-            <!-- Mobile Menu Toggle Button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-awesome fas fa-bars"></span>
-                <span class="navbar-toggler-awesome fas fa-times"></span>
-            </button>
-            <!-- end of mobile menu toggle button -->
-
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="./contact.html">Contact Us</a>
-                    </li>
-               
-
-                    <!-- Dropdown Menu -->          
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle page-scroll" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">MORE</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="https://www.instagram.com/made_products"><span class="item-text">Instagram</span></a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="https://wa.me/message/IVDHZJXLXRRMH1"><span class="item-text">Whatsapp</span></a>
-                        </div>
-                    </li>
-                    <!-- end of dropdown menu -->
-                </ul>
-                <span class="nav-item">
-                    <a class="btn-outline-sm page-scroll" href="tel:+91 8589907591">Call Now</a>
-                </span>
-            </div>
-        </div> <!-- end of container -->
-    </nav> <!-- end of navbar -->
-    <!-- end of navigation -->
+    <!-- Navigation Header root -->
+    <div id="header-root"></div>
 
 
     <!-- Header -->
@@ -93,7 +102,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="text-container">
-                        <img class="img-fluid" src="images/made_cover.png" height="150" width="150" alt="alternative">
+                      <img class="img-fluid" src="images/made_cover.png" height="150" width="150" alt="alternative">
                         <h1>MADE PRODUCTS</h1>
                         <p class="p-large p-heading">"The perfect carry partner"</p>
                         <a class="btn-solid-lg" href="https://www.instagram.com/made_products/"><i class="fab fa-instagram"></i>About Us</a>
@@ -125,81 +134,90 @@
     <div class="container-fluid big-padding pt-0 category">
         <div class="container-xl">
             <div class="textc">
-              <h4 >BAG CATEGORY</h4>
+              <h4 class="fw-bolder" style="color: #333; font-size: 1.75rem; margin-bottom: 1rem;">BAG CATEGORIES</h4>
+              <p class="text-muted">Choose a category to browse our custom bag designs</p>
             </div>
             <div class="row mt-4">
 
-              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center">
-                <a href="./textiles.html">
-                    <img class="rounded bg-white" src="images/category/tex1.jpg" alt="">
+              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center homepage-category-item">
+                <a href="category.html?type=customized">
+                  <div class="homepage-category-wrapper shadow-sm">
+                    <img class="img-fluid rounded bg-white homepage-category-img" src="images/category/customized.jpg" srcset="images/category/customized.jpg 1x, images/category/customized.jpg 2x" alt="Customized Paper Bags" loading="lazy">
+                  </div>
+                  <p class="pt-2 text-dark">Customized Paper Bags</p>
                 </a>
-                <p class="pt-2">Textile</p>
               </div>
-              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center">
-                <a href="./cake.html">
-                    <img class="rounded bg-white" src="images/category/cake1.jpg" alt="">
+              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center homepage-category-item">
+                <a href="category.html?type=kraft">
+                  <div class="homepage-category-wrapper shadow-sm">
+                    <img class="img-fluid rounded bg-white homepage-category-img" src="images/category/kraft.jpg" srcset="images/category/kraft.jpg 1x, images/category/kraft.jpg 2x" alt="Kraft Paper Bags" loading="lazy">
+                  </div>
+                  <p class="pt-2 text-dark">Kraft Paper Bags</p>
                 </a>
-                <p class="pt-2">Cake Bag</p>
               </div>
-              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center">
-                <a href="./mobileshop.html">
-                    <img class="rounded bg-white" src="images/category/m1.jpg" alt="">
+              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center homepage-category-item">
+                <a href="category.html?type=textile">
+                  <div class="homepage-category-wrapper shadow-sm">
+                    <img class="img-fluid rounded bg-white homepage-category-img" src="images/category/textile.jpg" srcset="images/category/textile.jpg 1x, images/category/textile.jpg 2x" alt="Textile Paper Bags" loading="lazy">
+                  </div>
+                  <p class="pt-2 text-dark">Textile Paper Bags</p>
                 </a>
-                <p class="pt-2">Mobile Shop</p>
               </div>
-              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center">
-                <a href="./footware.html">
-                    <img class="rounded bg-white" src="images/category/f1.jpg" alt="">
+              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center homepage-category-item">
+                <a href="category.html?type=jewellery">
+                  <div class="homepage-category-wrapper shadow-sm">
+                    <img class="img-fluid rounded bg-white homepage-category-img" src="images/category/jewellery.jpg" srcset="images/category/jewellery.jpg 1x, images/category/jewellery.jpg 2x" alt="Jewellery Paper Bags" loading="lazy">
+                  </div>
+                  <p class="pt-2 text-dark">Jewellery Paper Bags</p>
                 </a>
-                <p class="pt-2">Footwear</p>
               </div>
-              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center">
-                <a href="./fancy.html">
-                    <img class="rounded bg-white" src="images/category/fancy1.jpg" alt="">
+              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center homepage-category-item">
+                <a href="category.html?type=cake">
+                  <div class="homepage-category-wrapper shadow-sm">
+                    <img class="img-fluid rounded bg-white homepage-category-img" src="images/category/cake.jpg" srcset="images/category/cake.jpg 1x, images/category/cake.jpg 2x" alt="Cake Bags" loading="lazy">
+                  </div>
+                  <p class="pt-2 text-dark">Cake Bags</p>
                 </a>
-                <p class="pt-2">Fancy</p>
               </div>
-              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center">
-                <a href="./jewellwery.html">
-                    <img class="rounded bg-white" src="images/category/j1.jpg" alt="">
+              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center homepage-category-item">
+                <a href="category.html?type=fancy">
+                  <div class="homepage-category-wrapper shadow-sm">
+                    <img class="img-fluid rounded bg-white homepage-category-img" src="images/category/fancy.jpg" srcset="images/category/fancy.jpg 1x, images/category/fancy.jpg 2x" alt="Fancy Paper Bags" loading="lazy">
+                  </div>
+                  <p class="pt-2 text-dark">Fancy Paper Bags</p>
                 </a>
-                <p class="pt-2">Jewellery</p>
               </div>
-              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center">
-                <a href="./gentshop.html">
-                    <img class="rounded bg-white" src="images/category/gents1.jpg" alt="">
+              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center homepage-category-item">
+                <a href="category.html?type=kidswear">
+                  <div class="homepage-category-wrapper shadow-sm">
+                    <img class="img-fluid rounded bg-white homepage-category-img" src="images/category/kidswear.jpg" srcset="images/category/kidswear.jpg 1x, images/category/kidswear.jpg 2x" alt="Kidswear Paper Bags" loading="lazy">
+                  </div>
+                  <p class="pt-2 text-dark">Kidswear Paper Bags</p>
                 </a>
-                <p class="pt-2">Gents Shop</p>
               </div>
-              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center">
-                <a href="./optics.html">
-                    <img class="rounded bg-white" src="images/category/o1.jpg" alt="">
+              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center homepage-category-item">
+                <a href="category.html?type=mobileshop">
+                  <div class="homepage-category-wrapper shadow-sm">
+                    <img class="img-fluid rounded bg-white homepage-category-img" src="images/category/mobileshop.jpg" srcset="images/category/mobileshop.jpg 1x, images/category/mobileshop.jpg 2x" alt="Mobile Shop Paper Bags" loading="lazy">
+                  </div>
+                  <p class="pt-2 text-dark">Mobile Shop Paper Bags</p>
                 </a>
-                <p class="pt-2">Optics</p>
               </div>
-              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center">
-                <a href="./kids.html">
-                    <img class="rounded bg-white" src="images/category/k1.jpg" alt="">
+              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center homepage-category-item">
+                <a href="category.html?type=gentsshop">
+                  <div class="homepage-category-wrapper shadow-sm">
+                    <img class="img-fluid rounded bg-white homepage-category-img" src="images/category/gentsshop.jpg" srcset="images/category/gentsshop.jpg 1x, images/category/gentsshop.jpg 2x" alt="Gents Shop Paper Bags" loading="lazy">
+                  </div>
+                  <p class="pt-2 text-dark">Gents Shop Paper Bags</p>
                 </a>
-                <p class="pt-2">Kids Wear</p>
               </div>
-              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center">
-                <a href="./organization.html">
-                    <img class="rounded bg-white" src="images/category/or1.jpg" alt="">
+              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center homepage-category-item">
+                <a href="category.html?type=others">
+                  <div class="homepage-category-wrapper shadow-sm">
+                    <img class="img-fluid rounded bg-white homepage-category-img" src="images/category/others.jpg" srcset="images/category/others.jpg 1x, images/category/others.jpg 2x" alt="Other Bags" loading="lazy">
+                  </div>
+                  <p class="pt-2 text-dark">Other Bags</p>
                 </a>
-                <p class="pt-2">organization</p>
-              </div>
-              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center">
-                <a href="./hospital.html">
-                    <img class="rounded bg-white" src="images/category/h1.jpg" alt="">
-                </a>
-                <p class="pt-2">Hospital</p>
-              </div>
-              <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 text-center">
-                <a href="https://www.instagram.com/made_products/">
-                    <img class="rounded bg-white" src="images/category/travel1.jpg" alt="">
-                </a>
-                <p class="pt-2">Others</p>
               </div>
             </div>
         </div>
@@ -223,115 +241,36 @@
     </div>
     <!-- end of Instagram Gallery -->
 
-    <!-- Download -->
-    <div id="download" class="basic-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-       
-                    <p class="p-large">"Your Bag Your Brand"</p>
-                    <a class="btn-solid-lg" href="https://wa.me/message/IVDHZJXLXRRMH1"><i class="fab fa-whatsapp"></i>For more info</a>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-        <div class="deco-white-circle-1">
-            <img src="images/decorative-white-circle.svg" alt="alternative">
-        </div> <!-- end of deco-white-circle-1 -->
-        <div class="deco-white-circle-2">
-            <img src="images/decorative-white-circle.svg" alt="alternative">
-        </div> <!-- end of deco-white-circle-2 -->
-        <div class="deco-blue-circle">
-            <img src="images/decorative-blue-circle.svg" alt="alternative">
-        </div> <!-- end of deco-blue-circle -->
-        <div class="deco-yellow-circle">
-            <img src="images/decorative-yellow-circle.svg" alt="alternative">
-        </div> <!-- end of deco-yellow-circle -->
-        <div class="deco-green-diamond">
-            <img src="images/decorative-green-diamond.svg" alt="alternative">
-        </div> <!-- end of deco-yellow-circle -->
-    </div> <!-- end of basic-3 -->
-    <!-- end of download -->
-
-
-    <!-- Footer -->
-    <a name="About us"><div class="footer"></a>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    
-                    <div class="footer-col second">
-                        <h5>Contact Info</h5>
-                        <ul class="list-unstyled li-space-lg p-small">
-                            <li class="media">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div class="media-body"><a href="https://g.page/made-products?share">Chelari, Malappuram, Kerala</a></div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-envelope"></i>
-                                <div class="media-body"><a href="mailto:madeproducts17@gmail.com">madeproducts17@gmail.com</a></div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa fa-phone-alt"></i>
-                                <div class="media-body"><a href="tel:+918589907591">+91 8589907591</a></div>
-                            </li>
-                        </ul>
-                    </div> <!-- end of footer-col -->
-                    
-                    <div class="footer-col fifth">
-                        <span class="fa-stack">
-                            <a href="https://www.facebook.com/madeproducts17/">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-facebook-f fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="https://twitter.com/Made_products_">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-twitter fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="https://youtube.com/channel/UCG9oa6BKQj6LmZ_gXdWn_cQ">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-youtube fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="https://www.instagram.com/made_products/">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-instagram fa-stack-1x"></i>
-                            </a>
-                        </span>
-                    </div> <!-- end of footer-col -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of footer -->  
-    <!-- end of footer -->
-
-
-    <!-- Copyright -->
-    <div class="copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="p-small">Copyright © 2026 <a href="https://www.instagram.com/made_products/">Madeproducts</a> - All rights reserved</p>
-                </div> <!-- end of col -->
-            </div> <!-- enf of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of copyright --> 
-    <!-- end of copyright -->
+    <!-- Footer Root Placeholder -->
+    <div id="footer-root" data-show-download="true"></div>
     
-    	
     <!-- Scripts -->
-     
-    <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
-    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
-    <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
-    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.magnific-popup.js"></script>
+    <script src="js/validator.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+      // Initialize ScrollReveal for card animations
+      const sr = ScrollReveal({
+        distance: '20px',
+        duration: 800,
+        easing: 'ease-in-out',
+        origin: 'bottom',
+        reset: false
+      });
+      // Apply to homepage category cards
+      sr.reveal('.homepage-category-wrapper', { interval: 100 });
+      // Apply to category page image wrappers
+      sr.reveal('.category-image-wrapper', { interval: 100 });
+    </script>
     <script src="js/instagram-gallery.js"></script>
+    
+    <!-- Dynamic Layer Files -->
+    <script src="js/categories-data.js?v=2.0"></script>
+    <script src="js/shared-layout.js?v=2.0"></script>
 </body>
 </html>

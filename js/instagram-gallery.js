@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             html += `
                 <div class="col-xl-3 col-lg-3 col-md-4 col-6 mb-4 text-center">
                     <a href="${permalink}" target="_blank" rel="noopener noreferrer">
-                        <img class="rounded bg-white img-fluid shadow-sm" style="object-fit: cover; height: 250px; width: 100%;" src="${mediaUrl}" alt="Instagram Post">
+                        <img class="rounded bg-white img-fluid shadow-sm category-gallery-img" src="${mediaUrl}" alt="Instagram Post">
                     </a>
                 </div>
             `;

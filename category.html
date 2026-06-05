@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="The perfect carry partner">
+    <meta name="keywords" content="madeproducts, made products, Made Products, paperbag">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+    <meta property="og:site_name" content="Madeproducts" />
+    <meta property="og:site" content="www.madeproducts.in" />
+    <meta property="og:title" content="Made Products Category Gallery"/>
+    <meta property="og:description" content="The perfect carry partner" />
+    <meta property="og:image" content="images/made_cover.png" />
+    <meta property="og:url" content="www.madeproducts.in" />
+    <meta property="og:type" content="article" />
+    <title>Made Products</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/fontawesome-all.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
+    <link href="css/magnific-popup.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="icon" href="images/Favicon.png">
+
+    <!-- Premium UI Enhancement Styles -->
+    <style>
+      .category-image-wrapper {
+        overflow: hidden;
+        border-radius: 8px;
+        border: 1px solid #eaeaea;
+        background-color: #fff;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .category-image-wrapper:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12) !important;
+      }
+      .category-gallery-img {
+        transition: transform 0.5s ease;
+        object-fit: cover;
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        display: block;
+      }
+      .category-image-wrapper:hover .category-gallery-img {
+        transform: scale(1.06);
+      }
+      .category-item-container a {
+        text-decoration: none;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Preloader -->
+    <div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+
+    <!-- Navigation Header root -->
+    <div id="header-root"></div>
+
+    <!-- Breadcrumbs navigation tab -->
+    <div class="nav-tab container-fluid" style="margin-top: 80px;">
+        <div class="container-xl">
+          <div class="row justify-content-center py-4 pt-2">
+            <ul class="max-auto d-flex width-fit list-unstyled m-0 p-0">
+              <li class="float-start p-2"><a href="index.html" class="text-secondary" style="text-decoration: none;">Home</a> <i class="fas fa-chevron-right ps-3 pe-3 text-muted" style="font-size: 0.8rem;"></i></li>
+              <li class="float-start p-2 fw-bold" id="breadcrumb-active" style="color: #bfa46d;">Category Products</li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+    <!-- Hero Category Details -->
+    <div class="about-content container-fluid pt-3 pb-4">
+        <div class="container-xl px-0 px-md-5">
+          <div class="row">
+            <div class="col-md-8 text-center mx-auto">
+              <h1 id="category-title" class="fw-bolder display-4 mb-2" style="color: #333;">Category Bags</h1>
+              <p id="category-tagline" class="text-muted fst-italic">"Made Something Different"</p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Product Photo Gallery Grid -->
+    <div class="container-fluid pt-2 pb-5 bg-white">
+        <div class="container-xl">
+            <div class="row justify-content-center" id="category-gallery-grid">
+                <!-- JavaScript renders items here -->
+                <div class="col-12 text-center py-5">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Root Placeholder -->
+    <div id="footer-root" data-show-download="true"></div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.magnific-popup.js"></script>
+    <script src="js/validator.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+      // Initialize ScrollReveal for category page image wrappers
+      const sr = ScrollReveal({
+        distance: '20px',
+        duration: 800,
+        easing: 'ease-in-out',
+        origin: 'bottom',
+        reset: false
+      });
+      sr.reveal('.category-image-wrapper', { interval: 100 });
+    </script>
+    
+    <!-- Dynamic Layer Files -->
+    <script src="js/categories-data.js?v=2.0"></script>
+    <script src="js/shared-layout.js?v=2.0"></script>
+    <script src="js/category-renderer.js?v=2.0"></script>
+  </body>
+</html>

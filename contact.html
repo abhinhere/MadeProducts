@@ -28,234 +28,142 @@
   </head>
   <body>
 
-      <!--### Header Starts Here ####-->
+      <!-- Navigation Header root -->
+      <div id="header-root"></div>
 
-      <header>
-        <div class="top p-2"></div>
-        <div id="navBar" class="container-fluid ">
-          <div class="container-xl">
-            <div class="row py-1 py-lg-3 p-3">
-              <div class="col-lg-3 p-2">
-                <a class="navbar-brand logo-image" href="index.html"><img src="images/made_products_logo.png" height="40" width="100" alt="alternative"></a>              
-                 
-              </div>
-              <div id="menu" class="col-lg-7 d-none d-lg-block d-flex justify-content-center">
-              </div>
-              <div class="col-lg-2 d-none d-lg-block p-2 text-end">
-                <span class="nav-item">
-                  <a class="btn-outline-sm page-scroll" href="tel:+91 8589907591">Call Now</a>
-              </span>  
-              </div>
-              <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            </div>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <div class="nav-tab container-fluid">
-        <div class="container-xl">
-          <div class="row justify-content-center py-4 pt-2">
-            <ul class="max-auto d-flex width-fit">
-              <li class="float-start p-3">Home <i class="bi ps-4 pt-1 bi-arrow-right"></i></li>
-              <li class="float-start text-primary p-3">Contact US</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-fluid">
-          <div class="container-xl px-0 px-md-5">
-            <div class="row mb-5">
+      <!-- Contact Header Banner Section -->
+      <div class="container-fluid" style="padding-top: 110px;">
+          <div class="container-xl px-3 px-md-5">
+            <div class="row mb-4">
               <div class="col-md-7 text-center mx-auto">
-                <h1 class="fw-bolder">Contact Us</h1>
-                <p>"Made Something Different"</p>
+                <h1 class="fw-bolder" style="color: #333; font-size: 2.75rem;">Contact Us</h1>
+                <p class="text-muted fst-italic">"Made Something Different"</p>
               </div>
             </div>
             <div class="row mb-5">
-              <div class="col-md-12 mx-auto">
-                <img src="images/services.jpg" alt="">
+              <div class="col-md-12 text-center">
+                <img class="img-fluid rounded shadow-sm" src="images/services.jpg" alt="Made Products Banner" style="max-height: 400px; width: 100%; object-fit: cover;">
               </div>
             </div>
           </div>
       </div>
 
-      <!--### Contact Starts Here ####-->
-
-      <div class="container-fluid big-padding pt-3">
-        <div class="container-xl">
-          <div class="row px-5">
-            <div class="col-lg-6">
-              <h6 class="text-primary text-uppercase">Our Vision</h6>
-              <h2 class="fw-bolder">We are here to Help</h2>
-              <p>Welcome to Madeproducts, where sustainability meets style in every fold. As a leading manufacturer of eco-friendly packaging solutions, we pride ourselves on crafting high-quality paper bags that not only protect the environment but also enhance your brand’s image.</p>
-              <div class="d-flex align-items-center">
-                <div class="flex-shrink-0 align-self-centr pt-3">
-                  <i class="bi text-primary fs-3 bi-telephone-outbound"></i>
-                </div>
-                <div class="flex-grow-1 pt-4 ms-3">
-                  <span>Phone</span>
-                  <h6 class="fw-bolder">+91 8589907591</h6>
-                </div>
-              </div>
-
-              <div class="d-flex align-items-center">
-                <div class="flex-shrink-0 align-self-centr pt-3">
-                  <i class="bi bi-envelope-at fs-3 text-primary"></i>
-                </div>
-                <div class="flex-grow-1 pt-4 ms-3">
-                  <span>Email</span>
-                  <h6 class="fw-bolder">madeproducts17@gmail.com</h6>
-                </div>
-              </div>
-
-
-            </div>
-            <div class="col-lg-6 mt-4 mt-lg-0">
-              <div class="bg-agri p-5">
-                <h3 class="fw-bolder">Contact Us</h3>
-                <div class="row mt-4">
-                  <div class="col-md-6">
-                    <div class="mb-0">
-                      <label for="exampleFormControlInput1" class="form-label">Full Name</label>
-                      <input type="email" class="form-control bg-white rounded-0 form-control-lg" id="name" id="exampleFormControlInput1" placeholder="Enter Name">
-                    </div>
-
-                  </div>
-                  <div class="col-md-6">
-                    <div class="mb-0">
-                      <label for="exampleFormControlInput1" class="form-label">Mobile Number</label>
-                      <input type="email" class="form-control bg-white rounded-0 form-control-lg" id="exampleFormControlInput1" placeholder="Enter Mobile Number">
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="mb-3">
-                      <label for="exampleFormControlInput1" class="form-label">Enter Message</label>
-                      <textarea placeholder="Enter Message" name="" id="message" cols="30" rows="5" class="form-control bg-white rounded-0"></textarea>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="mb-3">
-                      <button class="btn btn-primary w-100 btn-lg" onclick="sendToWhatsapp()">Send Message</button>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!--### Iframe Starts Here ####-->
-
-      <div class="container-fluid big-padding pt-3">
-        <div class="container-xl">
-          <div class="row px-2">
-              <div class="col-md-12">
-                <iframe style="width:100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.1235904941136!2d75.88333487377966!3d11.104165753065589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba651f5944564ab%3A0x9beeab8a1af18363!2sMade%20products!5e0!3m2!1sen!2sin!4v1719882722720!5m2!1sen!2sin"  height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-              </div>
-          </div>
-        </div>
-      </div>
-
-      <!--###  Reaching US ####-->
-
-      <div class="about-content container-fluid">
-          <div class="container-xl px-2 px-md-5">
-            <div class="row mb-5">
-              <div class="col-md-9 text-center mx-auto">
-                <h1 class="fw-bolder">Thanks for Reaching Out</h1>
-                <p>Choosing Madeproducts means choosing excellence in sustainable packaging. With our commitment to innovation, quality, and environmental responsibility, we ensure that every bag you receive not only meets but exceeds your expectations.</p>
-              </div>
-            </div>
-          </div>
-      </div>
-      
-
-      <!--### Footer Starts Here ####-->
-
-
-      
- <!-- Footer -->
- <a name="About us"><div class="footer"></a>
-  <div class="container">
-      <div class="row">
-          <div class="col-lg-12">
-              
-              <div class="footer-col second">
-                  <h5>Contact Info</h5>
-                  <ul class="list-unstyled li-space-lg p-small">
-                      <li class="media">
-                          <i class="fas fa-map-marker-alt"></i>
-                          <div class="media-body"><a href="https://g.page/made-products?share">Chelari, Malappuram, Kerala</a></div>
-                      </li>
-                      <li class="media">
-                          <i class="fas fa-envelope"></i>
-                          <div class="media-body"><a href="mailto:madeproducts17@gmail.com">madeproducts17@gmail.com</a></div>
-                      </li>
-                      <li class="media">
-                          <i class="fas fa fa-phone-alt"></i>
-                          <div class="media-body"><a href="tel:+918589907591">+91 8589907591</a></div>
-                      </li>
-                  </ul>
-              </div> <!-- end of footer-col -->
-              
-              <div class="footer-col fifth">
-                  <span class="fa-stack">
-                      <a href="https://www.facebook.com/madeproducts17/">
-                          <i class="fas fa-circle fa-stack-2x"></i>
-                          <i class="fab fa-facebook-f fa-stack-1x"></i>
-                      </a>
-                  </span>
-                  <span class="fa-stack">
-                      <a href="https://twitter.com/Made_products_">
-                          <i class="fas fa-circle fa-stack-2x"></i>
-                          <i class="fab fa-twitter fa-stack-1x"></i>
-                      </a>
-                  </span>
-                  <span class="fa-stack">
-                      <a href="https://youtube.com/channel/UCG9oa6BKQj6LmZ_gXdWn_cQ">
-                          <i class="fas fa-circle fa-stack-2x"></i>
-                          <i class="fab fa-youtube fa-stack-1x"></i>
-                      </a>
-                  </span>
-                  <span class="fa-stack">
-                      <a href="https://www.instagram.com/made_products/">
-                          <i class="fas fa-circle fa-stack-2x"></i>
-                          <i class="fab fa-instagram fa-stack-1x"></i>
-                      </a>
-                  </span>
-              </div> <!-- end of footer-col -->
-          </div> <!-- end of col -->
-      </div> <!-- end of row -->
-  </div> <!-- end of container -->
-</div> <!-- end of footer -->  
-<!-- end of footer -->
-    <div class="copyright">
-      <div class="container">
+      <!-- Contact Content Section -->
+      <div class="container-fluid pt-3 pb-4">
+        <div class="container-xl px-3 px-md-5">
           <div class="row">
-              <div class="col-lg-12">
-                  <p class="p-small">Copyright © 2026 <a href="https://www.instagram.com/made_products/">Madeproducts</a> - All rights reserved</p>
-              </div> <!-- end of col -->
-          </div> <!-- enf of row -->
-      </div> <!-- end of container -->
-     </div>
+            <!-- Vision & Contact Details -->
+            <div class="col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+              <h6 class="text-uppercase fw-bold" style="color: #bfa46d; letter-spacing: 1.5px;">Our Vision</h6>
+              <h2 class="fw-bolder mb-4" style="color: #333; font-size: 2.25rem;">We are here to Help</h2>
+              <p class="text-muted mb-4" style="line-height: 1.8;">Welcome to Madeproducts, where sustainability meets style in every fold. As a leading manufacturer of eco-friendly packaging solutions, we pride ourselves on crafting high-quality paper bags that not only protect the environment but also enhance your brand’s image.</p>
+              
+              <!-- Phone Item -->
+              <div class="d-flex align-items-center mb-4 p-3 rounded bg-light border-start border-4" style="border-start-color: #bfa46d !important;">
+                <div class="flex-shrink-0 d-flex align-items-center justify-content-center bg-white rounded-circle shadow-sm" style="width: 50px; height: 50px;">
+                  <i class="fas fa-phone-alt" style="color: #bfa46d; font-size: 1.25rem;"></i>
+                </div>
+                <div class="ms-3">
+                  <span class="text-muted d-block small fw-bold text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.5px;">Phone</span>
+                  <a href="tel:+918589907591" class="fw-bolder text-dark h5 mb-0" style="text-decoration: none; transition: color 0.2s;">+91 8589907591</a>
+                </div>
+              </div>
 
-      <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
-       <script src="./main.js"></script>
-       <script src="js/whatsapp.js"></script>
-       <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-       <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
-       <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-       <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-       <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
-       <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
-       <script src="js/scripts.js"></script>
+              <!-- Email Item -->
+              <div class="d-flex align-items-center mb-4 p-3 rounded bg-light border-start border-4" style="border-start-color: #bfa46d !important;">
+                <div class="flex-shrink-0 d-flex align-items-center justify-content-center bg-white rounded-circle shadow-sm" style="width: 50px; height: 50px;">
+                  <i class="fas fa-envelope" style="color: #bfa46d; font-size: 1.25rem;"></i>
+                </div>
+                <div class="ms-3">
+                  <span class="text-muted d-block small fw-bold text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.5px;">Email</span>
+                  <a href="mailto:madeproducts17@gmail.com" class="fw-bolder text-dark h6 mb-0" style="text-decoration: none; transition: color 0.2s;">madeproducts17@gmail.com</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Form Card -->
+            <div class="col-lg-6">
+              <div class="bg-white border rounded-3 shadow-sm p-4 p-md-5">
+                <h3 class="fw-bolder mb-2" style="color: #333;">Send a Message</h3>
+                <p class="text-muted small mb-4">Fill out the form below to contact us directly via WhatsApp.</p>
+                
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="name" class="form-label fw-bold text-secondary small">Full Name</label>
+                    <input type="text" class="form-control bg-light border-light rounded-2 py-3 px-4" id="name" placeholder="Enter Name">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="phone" class="form-label fw-bold text-secondary small">Mobile Number</label>
+                    <input type="tel" class="form-control bg-light border-light rounded-2 py-3 px-4" id="phone" placeholder="Enter Mobile Number">
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="message" class="form-label fw-bold text-secondary small">Enter Message</label>
+                  <textarea placeholder="Enter Message" id="message" cols="30" rows="4" class="form-control bg-light border-light rounded-2 py-3 px-4"></textarea>
+                </div>
+
+                <button class="btn btn-lg w-100 fw-bold text-white rounded-3 shadow-sm" style="background-color: #bfa46d; border: none; padding: 12px 24px; transition: background-color 0.2s;" onclick="sendToWhatsapp()">
+                  <i class="fab fa-whatsapp me-2"></i>Send Message
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map Section -->
+      <div class="container-fluid pt-3 pb-5">
+        <div class="container-xl px-3 px-md-5">
+          <div class="row">
+              <div class="col-md-12">
+                <iframe style="width:100%; border: 0; border-radius: 8px;" class="shadow-sm" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.1235904941136!2d75.88333487377966!3d11.104165753065589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba651f5944564ab%3A0x9beeab8a1af18363!2sMade%20products!5e0!3m2!1sen!2sin!4v1719882722720!5m2!1sen!2sin"  height="450" allowfullscreen></iframe>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thanks Section -->
+      <div class="about-content container-fluid pb-5">
+          <div class="container-xl px-3 px-md-5">
+            <div class="row">
+              <div class="col-md-9 text-center mx-auto">
+                <h2 class="fw-bolder mb-3" style="color: #333;">Thanks for Reaching Out</h2>
+                <p class="text-muted" style="line-height: 1.8;">Choosing Madeproducts means choosing excellence in sustainable packaging. With our commitment to innovation, quality, and environmental responsibility, we ensure that every bag you receive not only meets but exceeds your expectations.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+      
+
+      <!-- Footer Root Placeholder (don't show CTA banner on contact page) -->
+      <div id="footer-root" data-show-download="false"></div>
+
+      <!-- Scripts -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/jquery.easing.min.js"></script>
+      <script src="js/jquery.magnific-popup.js"></script>
+      <script src="js/validator.min.js"></script>
+      <script src="js/scripts.js"></script>
+    <script>
+      // Initialize ScrollReveal for card animations on contact page (if any)
+      const sr = ScrollReveal({
+        distance: '20px',
+        duration: 800,
+        easing: 'ease-in-out',
+        origin: 'bottom',
+        reset: false
+      });
+      // Apply to any card-like containers if present
+      sr.reveal('.card', { interval: 100 });
+    </script>
+      <script src="js/whatsapp.js"></script>
+      
+      <!-- Dynamic Layer Files -->
+      <script src="js/categories-data.js?v=2.0"></script>
+      <script src="js/shared-layout.js?v=2.0"></script>
   </body>
 </html>
