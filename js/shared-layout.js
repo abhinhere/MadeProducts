@@ -7,16 +7,6 @@ function injectHeader() {
   const isContact = path.includes('contact.html');
   const isHome = path.includes('index.html') || path.endsWith('/') || (!isContact && !path.includes('category.html'));
 
-  // Build dynamic dropdown menu items for categories
-  let categoriesDropdownHtml = '';
-  const categories = typeof CATEGORIES_DATA !== 'undefined' ? CATEGORIES_DATA : {};
-  for (const key in categories) {
-    const targetUrl = categories[key].url || `category.html?type=${key}`;
-    categoriesDropdownHtml += `
-      <a class="dropdown-item" href="${targetUrl}"><span class="item-text">${categories[key].title}</span></a>
-    `;
-  }
-
   headerRoot.innerHTML = `
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <div class="container">
