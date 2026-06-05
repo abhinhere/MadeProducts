@@ -314,3 +314,84 @@
 	});
 
 })(jQuery);
+/* Custom Dropdown Initializer */
+document.addEventListener('DOMContentLoaded', function() {
+    const selects = document.querySelectorAll('select#home-category');
+    
+    selects.forEach(select => {
+        // Create custom wrapper
+        const wrapper = document.createElement('div');
+        wrapper.className = 'custom-select-wrapper';
+        
+        // Hide original select
+        select.style.display = 'none';
+        
+        // Insert wrapper before select and move select into it
+        select.parentNode.insertBefore(wrapper, select);
+        wrapper.appendChild(select);
+        
+        // Create trigger
+        const trigger = document.createElement('div');
+        trigger.className = 'custom-select-trigger';
+        
+        const triggerText = document.createElement('span');
+        triggerText.textContent = select.options[select.selectedIndex].text;
+        trigger.appendChild(triggerText);
+        
+        const arrow = document.createElement('div');
+        arrow.className = 'arrow';
+        trigger.appendChild(arrow);
+        
+        wrapper.appendChild(trigger);
+        
+        // Create options container
+        const optionsContainer = document.createElement('div');
+        optionsContainer.className = 'custom-options';
+        
+        Array.from(select.options).forEach(option => {
+            const customOption = document.createElement('span');
+            customOption.className = 'custom-option' + (option.selected ? ' selected' : '');
+            customOption.dataset.value = option.value;
+            customOption.textContent = option.text;
+            
+            customOption.addEventListener('click', function() {
+                // Update selected text
+                triggerText.textContent = this.textContent;
+                
+                // Update original select value
+                select.value = this.dataset.value;
+                
+                // Trigger change event on original select (important if there are listeners)
+                select.dispatchEvent(new Event('change'));
+                
+                // Update selected class
+                optionsContainer.querySelectorAll('.custom-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                
+                // Close dropdown
+                wrapper.classList.remove('open');
+            });
+            
+            optionsContainer.appendChild(customOption);
+        });
+        
+        wrapper.appendChild(optionsContainer);
+        
+        // Toggle dropdown on click
+        trigger.addEventListener('click', function(e) {
+            e.stopPropagation(); // prevent document click from firing
+            
+            // Close all other open custom dropdowns on the page
+            document.querySelectorAll('.custom-select-wrapper').forEach(other => {
+                if (other !== wrapper) other.classList.remove('open');
+            });
+            
+            wrapper.classList.toggle('open');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function() {
+            wrapper.classList.remove('open');
+        });
+    });
+});

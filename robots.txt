@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Prevent crawling of dynamic category queries since we now have static pages
+Disallow: /*?type=*
+
+Sitemap: https://madeproducts.in/sitemap.xml
