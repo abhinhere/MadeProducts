@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "source": "/mobileshop.html",
+      "destination": "/mobile-shop-paper-bags.html",
+      "permanent": true
+    },
+    {
+      "source": "/optics.html",
+      "destination": "/customized-paper-bags.html",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
