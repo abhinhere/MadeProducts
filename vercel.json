@@ -11,6 +11,11 @@
       "permanent": true
     },
     {
+      "source": "/kids.html",
+      "destination": "/kidswear-paper-bags.html",
+      "permanent": true
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
