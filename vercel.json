@@ -16,6 +16,11 @@
       "permanent": true
     },
     {
+      "source": "/textiles.html",
+      "destination": "/textile-paper-bags.html",
+      "permanent": true
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
